@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class enemigos : MonoBehaviour
 {
-    
+    public int muerto = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,9 @@ public class enemigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(muerto == 2){
+            SceneManager.LoadScene("Win", LoadSceneMode.Single);
+        }
     }
 
     public void hesidotocado()
@@ -27,6 +29,8 @@ public class enemigos : MonoBehaviour
     public void estoyMuerto()
     {
         Debug.Log("Estoy MUERTO");
+        muerto++;
+        
     }
 
     

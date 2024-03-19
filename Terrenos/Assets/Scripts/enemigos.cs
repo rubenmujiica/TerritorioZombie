@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class enemigos : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +21,13 @@ public class enemigos : MonoBehaviour
     public void hesidotocado()
     {
         Debug.Log("Estoy en el enemigo");
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 
     public void estoyMuerto()
     {
         Debug.Log("Estoy MUERTO");
     }
+
+    
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Jugador : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Jugador : MonoBehaviour
     float proximodisparo = 0f;
     float tiempodeEspera = 0.3f;
     public GameObject bala;
+    private int tocado = 0;
 
     void Start()
     {
@@ -25,4 +27,15 @@ public class Jugador : MonoBehaviour
             GameObject nuevabala = Instantiate(bala, salida.position, salida.rotation);
         }
     }
+
+    void OnTriggerEnter(Collider other){
+        if (other.gameObject.CompareTag("Zombie"))
+        {           
+            tocado++;
+            if(tocado == 1){
+                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            }
+                
+        } 
+}
 }

@@ -15,6 +15,7 @@ public class gestionVidas : MonoBehaviour
     void tocado(float fuerza)
     {
         vida -= fuerza;
+        Debug.Log(vida);
         hesidotocado.Invoke();
         if(vida <= 0)
         {

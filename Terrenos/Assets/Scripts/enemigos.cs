@@ -21,7 +21,7 @@ public class enemigos : MonoBehaviour
     public void hesidotocado()
     {
         Debug.Log("Estoy en el enemigo");
-        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+        
     }
 
     public void estoyMuerto()

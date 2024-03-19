@@ -10,7 +10,6 @@ public class Jugador : MonoBehaviour
     float proximodisparo = 0f;
     float tiempodeEspera = 0.3f;
     public GameObject bala;
-    private int tocado = 0;
 
     void Start()
     {
@@ -31,11 +30,8 @@ public class Jugador : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("Zombie"))
         {           
-            tocado++;
-            if(tocado == 1){
-                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-            }
-                
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+                 
         } 
 }
 }
